@@ -9,6 +9,7 @@ namespace Cafe.Cons
         {
             int numberOfPints = 10;
             PintDish pintDish = new PintDish(numberOfPints);
+            pintDish.PintStarted += PintDish_PintStarted;
 
             for (int i = 0; i < numberOfPints; i++)
             {
@@ -24,6 +25,11 @@ namespace Cafe.Cons
             }
 
             Console.ReadLine();
+        }
+
+        private static void PintDish_PintStarted(object sender, EventArgs e)
+        {
+            Console.WriteLine($"Brewing a new pint...");
         }
     }
 }
