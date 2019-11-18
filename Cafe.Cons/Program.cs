@@ -10,7 +10,6 @@ namespace Cafe.Cons
             int numberOfPints = 10;
             PintDish pintDish = new PintDish(numberOfPints);
             pintDish.PintStarted += PintDish_PintStarted;
-            pintDish.PintCompleted += PintDish_PintCompleted;
 
             for (int i = 0; i < numberOfPints; i++)
             {
@@ -31,11 +30,6 @@ namespace Cafe.Cons
         private static void PintDish_PintStarted(object sender, EventArgs e)
         {
             Console.WriteLine($"Brewing a new pint...");
-        }
-               
-        private static void PintDish_PintCompleted(object sender, PintCompletedArgs e)
-        {
-            Console.WriteLine($"{e.Brand} brewed by {e.Waiter}, cheers!");
         }
     }
 }
